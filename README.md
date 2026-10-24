@@ -33,7 +33,7 @@ docker run -d --name drupal-prod \
   --restart unless-stopped \
   -v "$(pwd)/logs:/var/log/apache2" \
   -p 80:80 \
-  cleanstart/drupal:latest-dev
+  ghcr.io/cleanstart-containers/drupal:latest-dev
 ```
 
 Volume Mount Mount local directory for persistent data
@@ -43,7 +43,7 @@ mkdir -p ./logs && sudo chown 65532:65532 ./logs
 
 docker run -it --rm --name drupal \
   -v "$(pwd)/logs:/var/log/apache2" \
-  cleanstart/drupal:latest-dev
+  ghcr.io/cleanstart-containers/drupal:latest-dev
 ```
 
 Port Forwarding Run with custom port mappings
@@ -52,7 +52,7 @@ Port Forwarding Run with custom port mappings
 docker run -it --rm --name drupal \
   -p 8080:80 \
   -v "$(pwd)/logs:/var/log/apache2" \
-  cleanstart/drupal:latest-dev
+  ghcr.io/cleanstart-containers/drupal:latest-dev
 ```
 
 ## Kubernetes Security Context
